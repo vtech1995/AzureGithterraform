@@ -40,9 +40,9 @@ steps:
    run: terraform plan -out=plan.tfplan -input=false -var="location=eastus" -var="resource_group_name=tfdemo" -var="storage_account_name=tfdemoabcxxyg" -var="storage_account_tier=Standard" -var="virtual_network_name=myvnet"
 
  - name: Terraform Apply
-      if: ${{ inputs.TFAction == 'apply'}}  
-      run: terraform apply -input=false -auto-approve plan.tfplan
+   if: ${{ inputs.TFAction == 'apply'}}  
+   run: terraform apply -input=false -auto-approve plan.tfplan
 
  - name: Terraform Destroy
-      if: ${{ inputs.TFAction == 'destroy' }} 
-      run: terraform destroy -input=false -auto-approve
+   if: ${{ inputs.TFAction == 'destroy' }} 
+   run: terraform destroy -input=false -auto-approve

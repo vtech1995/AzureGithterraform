@@ -1,4 +1,4 @@
-name: Terraform
+name: simple-tf
 
 on:
   workflow_dispatch:
